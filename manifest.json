@@ -1,0 +1,20 @@
+{
+  "name": "Bubble-Wrap",
+  "description": "Bubble Wrap popping game",
+  "version": "1.0.2",
+  "app": {
+    "launch": {
+      "container": "panel",
+      "width":1024,
+      "height":600,
+      "local_path": "index.html"
+    }
+  },
+  "icons": {
+    "128": "icon_128.png",
+    "48": "icon_48.png",
+    "16": "icon_16.png"
+  },
+  "homepage_url" : "https://01.org/webapps/content/bubblewrap", 
+  "update_url" : "https://01.org/webapps/content/bubblewrap/update.xml"
+}

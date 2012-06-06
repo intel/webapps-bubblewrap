@@ -1,0 +1,673 @@
+/*
+ * Copyright (c) 2012, Intel Corporation.
+ *
+ * This program is licensed under the terms and conditions of the 
+ * Apache License, version 2.0.  The full text of the Apache License is at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+.hbox {
+    display: -webkit-box;
+    -webkit-box-align: stretch;
+    -webkit-box-orient: horizontal;
+    overflow: hidden;
+}
+
+.vbox {
+    display: -webkit-box;
+    -webkit-box-align: stretch;
+    -webkit-box-orient: vertical;
+}
+
+.center {
+    -webkit-box-pack: center;
+}
+
+.end {
+    -webkit-box-pack: end;
+}
+
+.spacer {
+    -webkit-box-flex: 0;
+    width: 10px;
+    height: 10px;
+}
+
+.spring {
+    -webkit-box-flex: 1;
+}
+
+body {
+    background-image: url('images/Bubblewrap_Grass_122111_a.png');
+    background-position: left top;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: vertical;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+
+    position: absolute;
+    overflow: hidden;
+    cursor: default;
+    width: 1024px;
+    height: 600px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.view {
+    position: absolute;
+    width: 1024px;
+    height: 600px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+/* 800 x 480 */
+@media (orientation: landscape) {
+  body { top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%) scale(0.78125, 0.8); } 
+}
+/* 1024 x 600 */
+@media (min-width: 1024px) and (min-height: 600px) and (orientation: landscape) {
+  body { top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); }
+}
+/* 1280 x 720 */
+@media (min-width: 1280px) and (min-height: 720px) and (orientation: landscape) {
+  body { top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%) scale(1.25, 1.199); }
+}
+
+/* 480 x 800 */
+@media (orientation: portrait) {
+  body { top: 0%; left: 0%; -webkit-transform: translate(-50%, -50%) rotate(90deg) scale(0.8, 0.78125); }
+}
+/* 600 x 1024 */
+@media (min-width: 600px) and (min-height: 1024px) and (orientation: portrait) {
+  body { top: 0%; left: 0%; -webkit-transform: translate(-50%, -50%) rotate(90deg) translate(50%, -50%); }
+}
+/* 720 x 1230 */
+@media (min-width: 720px) and (min-height: 1230px) and (orientation: portrait) {
+  body { top: 0%; left: 0%; -webkit-transform: translate(-50%, -50%) rotate(90deg) scale(1.2, 1.199) translate(50%, -50%); }
+}
+/* 720 x 1280 */
+@media (min-width: 720px) and (min-height: 1280px) and (orientation: portrait) {
+  body { top: 0%; left: 0%; -webkit-transform: translate(-50%, -50%) rotate(90deg) scale(1.25, 1.199) translate(50%, -50%); }
+}
+
+
+.info-icon {
+    position: absolute;
+    top: 53px;
+    left: 912px;
+}
+
+.info-icon:hover {
+    cursor: pointer;
+}
+
+
+#app-content {
+}
+
+#titleView {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_BoxTitle_122111_a.png');
+}
+
+#normalButton {
+    position: absolute;
+    left: 153px;
+    top: 381px;
+    width: 331px;
+    height: 94px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_ButtonNormal_122111_a.png');
+}
+
+#normalButton:hover {
+    cursor: pointer;
+}
+
+#arcadeButton {
+    position: absolute;
+    left: 548px;
+    top: 396px;
+    width: 331px;
+    height: 94px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_ButtonArcade_122111_a.png');
+}
+
+#arcadeButton:hover {
+    cursor: pointer;
+}
+
+.startButtonLabel {
+    position: relative;
+    top: -20px;
+    font-size: 60pt;
+    color: #000000;
+    font-family: 'Permanent Marker';
+    text-align: center;
+}
+
+.startButtonLabel:hover {
+    color: #a80000;
+}
+
+#normalButtonLabel {
+    -webkit-transform: rotate(1deg);
+}
+
+#arcadeButtonLabel {
+    -webkit-transform: rotate(-1deg);
+}
+
+#playView {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_BoxPeanut_122111_a.png');
+}
+
+.pause-mode {
+    background-position: 0px 65px !important;
+    background-image: url('images/Bubblewrap_BoxPauseBottom_010512_b.png') !important;
+}
+
+#pauseButton {
+    position: relative;
+    left: 900px;
+    top: 8px;
+}
+
+#pauseButton:hover {
+    cursor: pointer;
+}
+
+#clock {
+    position: absolute;
+    left: 89px;
+    top: 0px;
+    width: 92px;
+    height: 67px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/BubbleWrap_TapeClock_122111_a.png');
+}
+
+#clockLabel {
+    position: relative;
+    font-size: 38pt;
+    top: -10px;
+    color: #000000;
+    font-family: 'Permanent Marker';
+    text-align: center;
+}
+
+#clockLabel:hover {
+    cursor: default;
+}
+
+#score {
+    position: absolute;
+    left: 260px;
+    top: 0px;
+    width: 542px;
+    height: 53px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/BubbleWrap_TapeScore_122111_a.png');
+}
+
+.scoreText {
+    top: 0px;
+    color: #000000;
+    font-family: 'Permanent Marker';
+}
+
+.scoreText:hover {
+    cursor: default;
+}
+
+#currentScoreLabel {
+    position: relative;
+    top: -5px;
+    left: 20px;
+    font-size: 30pt;
+}
+#currentScoreValue {
+    position: relative;
+    top: -12px;
+    left: 20px;
+    font-size: 35pt;
+}
+
+#bestScoreLabel {
+    position: relative;
+    top: -5px;
+    left: -25px;
+    font-size: 30pt;
+}
+#bestScoreValue {
+    position: relative;
+    top: -12px;
+    left: -25px;
+    font-size: 35pt;
+}
+
+.bubbleSheet {
+    position: absolute;
+    top: 68px;
+    left: 1024px;
+    width: 1024px;
+    height: 535px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_BubblesBlueBack_122111_a.png');    
+    -webkit-box-pack: start;
+}
+
+.bubbleSheet > .spacer {
+    height: 38px;
+}
+
+.bubbleSheet > .hbox {
+    height: 67px;
+}
+
+.bubble {
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-image: url('images/Bubblewrap_BubbleFull_122111_a.png');    
+}
+
+.bubble:hover {
+    cursor: pointer;
+}
+
+.bubblegap-odd {
+    width: 100px;
+}
+.bubblegap-even {
+    width: 59px;
+}
+.bubblespace {
+    width: 10px;
+}
+
+#pauseBox {
+    width: 1024px;
+    height: 531px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_BoxPauseBottom_010512_b.png');
+}
+
+#pauseTopFlap .info-icon {
+    position: absolute;
+    top: 39px;
+    left: 875px;
+}
+
+#pauseTopFlap {
+    position: relative;
+    top: 44px;
+    left: 20px;
+    width: 997px;
+    height: 326px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_BoxPauseTop_122111_a.png');
+}
+
+#quitButton {
+    position: absolute;
+    left: 143px;
+    top: 109px;
+    width: 260px;
+    height: 102px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_ButtonQuit_122111_a.png');
+}
+
+#quitButton:hover {
+    cursor: pointer;
+}
+
+#resumeButton {
+    position: absolute;
+    left: 500px;
+    top: 109px;
+    width: 359px;
+    height: 104px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_ButtonResume_122111_a.png');
+}
+
+#resumeButton:hover {
+    cursor: pointer;
+}
+
+.pauseViewButtonLabel {
+    position: relative;
+    top: -12px;
+    font-size: 60pt;
+    color: #000000;
+    font-family: 'Permanent Marker';
+    text-align: center;
+    width: 100%;
+}
+
+.pauseViewButtonLabel:hover {
+    color: #a80000;
+}
+
+#quitButtonLabel {
+    -webkit-transform: rotate(4deg);
+}
+
+#resumeButtonLabel {
+    -webkit-transform: rotate(-2deg);
+}
+
+#settingsPage {
+    position: absolute;
+    top: 2px;
+    left: 175px;
+    width: 648px;
+    height: 598px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_PaperSettings_122111_a.png');
+}
+
+#helpPage {
+    position: absolute;
+    top: 72px;
+    left: 243px;
+    width: 655px;
+    height: 543px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_PaperHowTo_122111_a.png');
+}
+
+#helpPage > .spacer:first-child {
+    height: 45px;
+}
+
+#helpIcon {
+    position: relative;
+    margin-right: 40px;
+}
+
+#instructionBox {
+    border: 4px solid black;
+    width: 500px;
+    -webkit-border-radius: 5px;
+}
+
+#instructionBox .vbox {
+    width: 180px;
+}
+
+.instruction-box-title {
+    font-family: 'Arvo';
+    font-size: 30pt;
+    color: #000000;
+}
+
+.instruction-box-label {
+    font-family: 'Open Sans Semibold';
+    font-size: 20pt;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.instruction-box-content {
+    font-family: 'Open Sans Semibold';
+    font-size: 12pt;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.instruction-box-icon-label {
+    font-family: 'Open Sans Bold';
+    font-size: 10pt;
+    color: #000000;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#clockIcon {
+    background-image: url('images/Bubblewrap_IconClock_122111_a.png');
+}
+#hammerIcon {
+    background-image: url('images/Bubblewrap_IconHammer_122111_a.png');
+}
+#bombIcon {
+    background-image: url('images/Bubblewrap_IconBomb_122111_a.png');
+}
+#pumpIcon {
+    background-image: url('images/Bubblewrap_IconPump_122111_a.png');
+}
+
+#settingsPage > .spacer:first-child {
+    height: 45px;
+}
+
+#settingsIcon {
+    position: relative;
+    margin-right: 40px;
+    
+}
+
+#settingsIconContainer {
+    height: 48px;
+}
+
+#settingsBox, .leaderBox {
+    border: 4px solid black;
+    width: 500px;
+    -webkit-border-radius: 5px;
+}
+
+.settings-box-title {
+    font-family: 'Arvo';
+    font-size: 30pt;
+    color: #000000;
+    line-height: 40px;
+}
+
+.settings-box-label {
+    font-family: 'Open Sans Semibold';
+    font-size: 20pt;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.settings-box-content {
+    font-family: 'Open Sans Semibold';
+    font-size: 12pt;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.leaderBox .spring {
+    border-bottom: 3px dotted black;
+    font-family: 'Open Sans Semibold';
+    font-size: 20pt;
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leader-entry {
+    -webkit-box-flex: 0;
+    font-family: 'Open Sans Semibold';
+    font-size: 20pt;
+    color: #000000;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.audio-setting-label {
+    font-family: 'Open Sans Semibold';
+    font-size: 10pt;
+    text-align: center;
+    color: #000000;
+}
+
+.setting-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 3px solid black;
+}
+
+.setting-checkbox:hover {
+    cursor: pointer;
+}
+
+#gameOverPage {
+    position: absolute;
+    top: 2px;
+    left: 175px;
+    width: 648px;
+    height: 598px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('images/Bubblewrap_PaperGameOver_122111_a.png');
+}
+
+#gameover-title {
+    position: relative;
+    top: 15px;
+}
+.gameover-level-1-text {
+    font-size: 18pt;
+    color: #000000;
+    font-family: 'Open Sans Semibold';
+    text-align: center;
+}
+
+.gameover-level-2-text {
+    font-size: 30pt;
+    color: #000000;
+    font-family: 'Arvo';
+    text-align: center;
+}
+
+.gameover-level-3-text {
+    position: relative;
+    top: -20px;
+    font-size: 45pt;
+    color: #000000;
+    font-family: 'Open Sans Extrabold';
+    text-align: center;
+}
+
+#gameover-score-container {
+    height: 50px;
+}
+
+#gameover-entry-container {
+    position: relative;
+    top: -10px;
+    width: 500px;
+    margin-left: 65px;
+}
+
+#gameover-entry-container .spring {
+    border-bottom: 3px dashed black;
+}
+
+#gameover-entry {
+    font-family: 'Open Sans Bold';
+    font-size: 12pt;
+    background-color: transparent;
+    border: 0px;
+}
+
+#gameover-entry:focus {
+    outline: none;
+}
+
+.game-over-button {
+    display: inline-block;
+    -webkit-border-radius: 50px;
+    background-color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.game-over-button:hover {
+    cursor: pointer;
+}
+
+.game-over-button > div {
+    position: relative;
+    line-height: 38px;
+    color: #c6c6c6;
+}
+
+#settingsPage .game-over-button > div {
+    color: #d3b4b4;
+}
+
+.bubble-overlay {
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bomb {
+    background-image: url('images/Bubblewrap_IconBomb_122111_a.png');
+}
+.clock {
+    background-image: url('images/Bubblewrap_IconClock_122111_a.png');
+}
+.pump {
+    background-image: url('images/Bubblewrap_IconPump_122111_a.png');
+}
+.hammer {
+    background-image: url('images/Bubblewrap_IconHammer_122111_a.png');
+}
+
+.checkbox-on {
+    background-color: black;
+}
+
+.ontop {
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+div {
+    -webkit-user-select: none;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
