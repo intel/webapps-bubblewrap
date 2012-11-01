@@ -1,6 +1,7 @@
 Bubblewrap is a fun bubble poping game implemented with HTML5/Javascript technology. 
 
 Author: Rusty Lynch <rusty.lynch@intel.com>
+Owner: Todd Brandt <todd.e.brandt@intel.com>
 
 This application is written using HTML5/css3/jquery javascript library and is
 distributed under Apache2.0 license. 
