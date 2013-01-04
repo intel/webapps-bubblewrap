@@ -31,13 +31,23 @@
 }
 
 #licensetext {
-    width: 99.8%;
+    width: 99%;
     height: 88%;
     background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FFFFFF), color-stop(1, #a2915a));
     -webkit-border-radius: 12px;
     border-radius: 12px;
     box-shadow: inset 1px 1px 2px 1px black;
     margin-bottom: 2px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    cursor: move; 
+}
+
+#licensescroll {
+    position: relative;
+    font: 20px/100% Arial, Helvetica, sans-serif;
+    text-align: center; 
 }
 
 .licensebtn {

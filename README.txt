@@ -1,24 +1,18 @@
 Bubblewrap is a fun bubble poping game implemented with HTML5/Javascript technology. 
 
 Author: Rusty Lynch <rusty.lynch@intel.com>
-Owner: Todd Brandt <todd.e.brandt@intel.com>
+Owner: Carl Wong <carl.wong@intel.com>
 
 This application is written using HTML5/css3/jquery javascript library and is
 distributed under Apache2.0 license. 
 
 
-jQuery JavaScript Library v1.7.2
-Copyright 2011, John Resig
-Dual licensed under the MIT or GPL Version 2 licenses.
-http://jquery.org/license
-
 IMAGES
 -----------------------------------------------------------------------------
 
-all images are created by Intel Corp. 
-they are licensed under the Creative Commons Attribution 3.0 license 
+All images are created by Intel Corp. 
+They are licensed under the Creative Commons Attribution 3.0 license 
 http://creativecommons.org/licenses/by/3.0/us/
-
 
 FONTS
 -----------------------------------------------------------------------------
@@ -37,7 +31,6 @@ Open Sans:        Apache2.0 License
 SOUNDS
 -----------------------------------------------------------------------------
 
-
 BubbleBad.ogg
   Original Name: Cartoon_9'' Boing.mp3
   Origin:  http://www.freesound.org/people/CGEffex/sounds/89545/
@@ -54,7 +47,6 @@ BubbleGood.ogg
   Origin:  http://www.freesound.org/people/CGEffex/sounds/93100/
   License: http://creativecommons.org/licenses/by/3.0/
  
-
 Bubble.ogg
   Original Name: Cork3.aif
   Origin:  http://www.freesound.org/people/Traveler/sounds/16064/
@@ -105,3 +97,11 @@ WinningSound.ogg
   Original Name: buttonchime02up.wav
   Origin:  http://www.freesound.org/people/JustinBW/sounds/80921/
   License: http://creativecommons.org/licenses/by/3.0/
+
+LIBRARIES
+-----------------------------------------------------------------------------
+
+jQuery JavaScript Library v1.7.2
+Copyright 2011, John Resig
+Dual licensed under the MIT or GPL Version 2 licenses.
+http://jquery.org/license
