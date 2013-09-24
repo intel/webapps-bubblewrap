@@ -1,9 +1,0 @@
-All files in this directory were downloaded from the Google WebFonts project.
-
-http://www.google.com/webfonts#UsePlace:use/Collection:Permanent+Marker|Arvo:700|Open+Sans:600,700,800
-
-The licenses for each of the fonts are specified as:
-
-Arvo:             Open Font License (OFL.txt)
-Permanent Marker: Apache License (APACHE_LICENSE.txt)
-Open Sans:        Apache License (APACHE_LICENSE.txt)
