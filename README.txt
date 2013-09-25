@@ -1,4 +1,4 @@
-Bubblewrap is a fun bubble poping game implemented with HTML5/Javascript technology.
+Bubblewrap is a fun bubble popping game implemented with HTML5/Javascript technology.
 
 Author: Rusty Lynch <rusty.lynch@intel.com>
 Owner: Carl Wong <carl.wong@intel.com>
