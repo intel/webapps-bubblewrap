@@ -1,0 +1,13 @@
+{
+  "name": "webapps-annex",
+  "version": "1.1.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "open-sans": "http://www.fontsquirrel.com/fonts/download/open-sans",
+    "jquery": "~2.0.3"
+  }
+}

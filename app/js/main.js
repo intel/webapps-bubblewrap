@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2012, Intel Corporation.
  *
- * This program is licensed under the terms and conditions of the 
+ * This program is licensed under the terms and conditions of the
  * Apache License, version 2.0.  The full text of the Apache License is at
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -57,13 +57,13 @@ App = {};
 
     function addButtonAction(target, action, timeout) {
         $(target).addClass(action);
-        
+
         // setup increasing blinks as the timeout approaches
         setTimeout(function () { blink(target); }, timeout * 0.5);
         setTimeout(function () { blink(target); }, timeout * 0.75);
         setTimeout(function () { blink(target); }, timeout * 0.875);
         setTimeout(function () { blink(target); }, timeout * 0.9375);
-        
+
         // Clear the action
         setTimeout(function () {
             $(target).removeClass('bomb clock pump hammer');
@@ -72,7 +72,7 @@ App = {};
 
     function tick() {
         $('#clockLabel').text(':' + --secondsLeft);
-        
+
         if ((currentScore < 50 && secondsLeft % 3 == 0) || (currentScore > 49 && currentScore < 100 && secondsLeft % 2) || currentScore > 99 ) {
             var actions = ['bomb', 'clock', 'pump', 'hammer'];
             var targetAction = actions[Math.floor(Math.random() * actions.length)];
@@ -91,9 +91,9 @@ App = {};
 
             if (audioEnabled && infocus) {
                 if (targetAction == 'bomb' || targetAction == 'pump')
-                    new Audio("sounds/BubbleBad.ogg").play();
+                    new Audio("audio/BubbleBad.ogg").play();
                 else
-                    new Audio("sounds/BubbleGood.ogg").play();
+                    new Audio("audio/BubbleGood.ogg").play();
             }
         }
         if (secondsLeft < 0) {
@@ -108,7 +108,7 @@ App = {};
             updateLeaderBoards();
             $('#gameover-entry').attr('value', '').removeAttr('disabled').focus();
 
-            if (audioEnabled && infocus) new Audio("sounds/LosingSoundBuzzer.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/LosingSoundBuzzer.ogg").play();
         }
     }
 
@@ -136,20 +136,20 @@ App = {};
         }
 
         if (audioEnabled && infocus)
-            new Audio("sounds/NewBubblePage.ogg").play();
+            new Audio("audio/NewBubblePage.ogg").play();
     }
 
     function pauseGamePlay() {
-        if (audioEnabled && infocus) new Audio("sounds/ButtonClick.ogg").play();
+        if (audioEnabled && infocus) new Audio("audio/ButtonClick.ogg").play();
         paused = true;
         clearInterval(clockInterval);
         $('.arcade-view, .normal-view, .info-view').addClass('hidden');
         $('.pause-view').removeClass('hidden');
         $('#playView').addClass('pause-mode');
     }
-    
+
     function resumeGamePlay() {
-        if (audioEnabled && infocus) new Audio("sounds/ButtonClick.ogg").play();
+        if (audioEnabled && infocus) new Audio("audio/ButtonClick.ogg").play();
         paused = false;
         if (arcadeMode) {
             clockInterval = setInterval(tick, 1000);
@@ -205,18 +205,18 @@ App = {};
             $('#currentScoreValue').text(--currentScore);
         } else {
             if ($(this).children().hasClass('bomb')) {
-                if (audioEnabled && infocus) new Audio("sounds/LosingSound.ogg").play();
+                if (audioEnabled && infocus) new Audio("audio/LosingSound.ogg").play();
                 secondsLeft -= 5;
                 $('#clockLabel').text(':' + secondsLeft);
             } else if ($(this).children().hasClass('clock')) {
-                if (audioEnabled && infocus) new Audio("sounds/Bubble.ogg").play();
+                if (audioEnabled && infocus) new Audio("audio/Bubble.ogg").play();
                 secondsLeft += 5;
                 $('#clockLabel').text(':' + secondsLeft);
             } else if ($(this).children().hasClass('pump')) {
-                if (audioEnabled && infocus) new Audio("sounds/LosingSound.ogg").play();
+                if (audioEnabled && infocus) new Audio("audio/LosingSound.ogg").play();
                 $(this).parent().parent().children().children().each(function () {
-                    if ($(this).hasClass('popped') && 
-                        Math.abs($(this).position().top - $(bubble).position().top) < 100 && 
+                    if ($(this).hasClass('popped') &&
+                        Math.abs($(this).position().top - $(bubble).position().top) < 100 &&
                         Math.abs($(this).position().left - $(bubble).position().left) < 100) {
                         currentScore--;
                         $(this).css('background-image', fullBubbleImages[Math.floor(Math.random() * fullBubbleImages.length)])
@@ -226,11 +226,11 @@ App = {};
                     }
                 });
             } else if ($(this).children().hasClass('hammer')) {
-                if (audioEnabled && infocus) new Audio("sounds/BubblePop.ogg").play();
+                if (audioEnabled && infocus) new Audio("audio/BubblePop.ogg").play();
                 $(this).parent().parent().children().children().each(function () {
-                    if ($(this).hasClass('bubble') && 
-                        !$(this).hasClass('popped') && 
-                        Math.abs($(this).position().top - $(bubble).position().top) < 100 && 
+                    if ($(this).hasClass('bubble') &&
+                        !$(this).hasClass('popped') &&
+                        Math.abs($(this).position().top - $(bubble).position().top) < 100 &&
                         Math.abs($(this).position().left - $(bubble).position().left) < 100) {
                         currentScore++;
                         $(this).css('background-image', poppedBubbleImages[Math.floor(Math.random() * poppedBubbleImages.length)])
@@ -239,15 +239,15 @@ App = {};
                     }
                 });
             } else {
-                if (audioEnabled && infocus) new Audio("sounds/Bubble.ogg").play();
+                if (audioEnabled && infocus) new Audio("audio/Bubble.ogg").play();
             }
             $('#currentScoreValue').text(++currentScore);
             $(this).addClass('popped').css('background-image', poppedBubbleImages[Math.floor(Math.random() * poppedBubbleImages.length)])
                 .children().removeClass('bomb clock pump hammer');
             if ($('.current-sheet .bubble:not(.popped)').length == 0) {
-            	if(secondsLeft > 0){
-            		if (audioEnabled && infocus) new Audio("sounds/WinningSound.ogg").play();
-            	}
+                if(secondsLeft > 0){
+                    if (audioEnabled && infocus) new Audio("audio/WinningSound.ogg").play();
+                }
                 slideInNewSheet();
             }
         }
@@ -269,7 +269,7 @@ App = {};
                         break;
                     }
                 }
-                
+
                 if (!foundSpot && leaders.length < 7)
                     // the current score is lower then all existing entries
                     leaders.push({'name': name, 'score': currentScore});
@@ -284,8 +284,8 @@ App = {};
     function start() {
         $('.view, .arcade-view, .normal-view, .info-view, .gameover-view, .pause-view').addClass('hidden');
         $('#titleView').removeClass('hidden');
-        
-        if (audioEnabled && infocus) new Audio("sounds/StartGame.ogg").play();
+
+        if (audioEnabled && infocus) new Audio("audio/StartGame.ogg").play();
     }
 
     function init() {
@@ -299,25 +299,25 @@ App = {};
 
         // Setup title view button handlers
         $('#normalButton').click(function () {
-            if (audioEnabled && infocus) new Audio("sounds/ButtonClick.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/ButtonClick.ogg").play();
             startPlaying(false);
         });
         $('#arcadeButton').click(function () {
-            if (audioEnabled && infocus) new Audio("sounds/ButtonClick.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/ButtonClick.ogg").play();
             startPlaying(true);
         });
 
         // Setup info button handlers in all views
         var lastView = null;
         $('.info-icon').click(function () {
-            if (audioEnabled && infocus) new Audio("sounds/ButtonClick.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/ButtonClick.ogg").play();
             lastView = $('.view:not(.hidden)');
             updateLeaderBoards();
             $('.view, .normal-view, .arcade-view, .gameover-view, .pause-view').addClass('hidden');
             $('#playView, .info-view').removeClass('hidden pause-mode');
         });
         $('.close-button').click(function () {
-            if (audioEnabled && infocus) new Audio("sounds/ButtonClick.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/ButtonClick.ogg").play();
             if (lastView.attr('id') == 'titleView') {
                 start();
             } else {
@@ -340,11 +340,11 @@ App = {};
 
         // Setup info view handlers
         $('#settingsPage').click(function () {
-            if (audioEnabled && infocus) new Audio("sounds/NavChangePaper.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/NavChangePaper.ogg").play();
             $('#helpPage').removeClass('ontop');
         });
         $('#helpPage').click(function () {
-            if (audioEnabled && infocus) new Audio("sounds/NavChangePaper.ogg").play();
+            if (audioEnabled && infocus) new Audio("audio/NavChangePaper.ogg").play();
             $('#helpPage').addClass('ontop');
         });
         $('#audioSettingOn').click(function () {
@@ -372,5 +372,7 @@ App = {};
         init();
         window.onblur = function() {infocus = false;};
         window.onfocus = function() {infocus = true;};
+
+        scaleBody(document.getElementsByTagName("body")[0], 720);
     });
 })()

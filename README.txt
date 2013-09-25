@@ -1,17 +1,17 @@
-Bubblewrap is a fun bubble poping game implemented with HTML5/Javascript technology. 
+Bubblewrap is a fun bubble poping game implemented with HTML5/Javascript technology.
 
 Author: Rusty Lynch <rusty.lynch@intel.com>
 Owner: Carl Wong <carl.wong@intel.com>
 
 This application is written using HTML5/css3/jquery javascript library and is
-distributed under Apache2.0 license. 
+distributed under Apache2.0 license.
 
 
 IMAGES
 -----------------------------------------------------------------------------
 
-All images are created by Intel Corp. 
-They are licensed under the Creative Commons Attribution 3.0 license 
+All images are created by Intel Corp.
+They are licensed under the Creative Commons Attribution 3.0 license
 http://creativecommons.org/licenses/by/3.0/us/
 
 FONTS
@@ -24,7 +24,7 @@ http://www.google.com/webfonts#UsePlace:use/Collection:Permanent+Marker|Arvo:700
 The licenses for each of the fonts are specified as:
 
 Arvo:             SIL Open Font License 1.1
-Permanent Marker: Apache2.0 License 
+Permanent Marker: Apache2.0 License
 Open Sans:        Apache2.0 License
 
 
@@ -46,7 +46,7 @@ BubbleGood.ogg
   Original Name: Whip Crack 01.wav
   Origin:  http://www.freesound.org/people/CGEffex/sounds/93100/
   License: http://creativecommons.org/licenses/by/3.0/
- 
+
 Bubble.ogg
   Original Name: Cork3.aif
   Origin:  http://www.freesound.org/people/Traveler/sounds/16064/
