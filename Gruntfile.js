@@ -44,6 +44,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           'build/app/css/main.css': ['app/css/main.css'],
+          'build/app/css/fonts.css': ['app/css/fonts.css'],
           'build/app/css/license.css': ['app/css/license.css']
         }
       }
@@ -53,7 +54,6 @@ module.exports = function (grunt) {
       common: {
         files: [
           { expand: true, cwd: '.', src: ['app/lib/**'], dest: 'build/' },
-          { expand: true, cwd: '.', src: ['app/fonts/**'], dest: 'build/' },
           { expand: true, cwd: '.', src: ['app/audio/**'], dest: 'build/' },
           { expand: true, cwd: '.', src: ['LICENSE'], dest: 'build/app/' },
           { expand: true, cwd: '.', src: ['README.txt'], dest: 'build/app/' },

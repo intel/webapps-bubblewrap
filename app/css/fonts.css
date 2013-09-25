@@ -11,31 +11,31 @@
   font-family: 'Arvo';
   font-style: normal;
   font-weight: bold;
-  src: local('Arvo Bold'), local('Arvo-Bold'), url('arvo-bold.woff') format('woff');
+  src: local(Arvo Bold), local(Arvo-Bold), url(../lib/arvo/Arvo-Bold.ttf) format(ttf);
 }
 @font-face {
   font-family: 'Open Sans Extrabold';
   font-style: normal;
   font-weight: 800;
-  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url('opensans-extrabold.woff') format('woff');
+  src: local(Open Sans Extrabold), local(OpenSans-Extrabold), url(../lib/open-sans/OpenSans-ExtraBold.ttf) format(ttf);
 }
 @font-face {
   font-family: 'Permanent Marker';
   font-style: normal;
   font-weight: normal;
-  src: local('Permanent Marker'), local('PermanentMarker'), url('permanentmarker.woff') format('woff');
+  src: local(Permanent Marker), local(PermanentMarker), url(../lib/permanentmarker/PermanentMarker.ttf) format(ttf);
 }
 @font-face {
   font-family: 'Open Sans Semibold';
   font-style: normal;
   font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('opensans-semibold.woff') format('woff');
+  src: local(Open Sans Semibold), local(OpenSans-Semibold), url(../lib/opens-sans/OpenSans-SemiBold.ttf) format(ttf);
 }
 @font-face {
   font-family: 'Open Sans Bold';
   font-style: normal;
   font-weight: 700;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('opensans-bold.woff') format('woff');
+  src: local(Open Sans Bold), local(OpenSans-Bold), url(../lib/open-sans/OpenSans-Bold.ttf) format(ttf);
 }
 
 font-family: 'Permanent Marker', cursive;

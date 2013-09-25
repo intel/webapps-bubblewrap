@@ -8,6 +8,8 @@
   ],
   "dependencies": {
     "open-sans": "http://www.fontsquirrel.com/fonts/download/open-sans",
+    "arvo": "http://www.fontsquirrel.com/fonts/download/arvo",
+    "permanentmarker": "http://www.fontsquirrel.com/fonts/download/permanent-marker",
     "jquery": "~2.0.3"
   }
 }
