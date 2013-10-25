@@ -31,22 +31,18 @@ module.exports = function (grunt) {
     // minify JS
     uglify: {
       dist: {
-        files: {
-          'build/app/js/main.js': ['app/js/main.js'],
-          'build/app/js/license.js': ['app/js/license.js'],
-          'build/app/js/scaleBody.js': ['app/js/scaleBody.js']
-        }
+        files: [
+          { expand: true, cwd: '.', src: 'app/js/**/*.js', dest: 'build/' }
+        ]
       }
     },
 
     // minify CSS
     cssmin: {
       dist: {
-        files: {
-          'build/app/css/main.css': ['app/css/main.css'],
-          'build/app/css/fonts.css': ['app/css/fonts.css'],
-          'build/app/css/license.css': ['app/css/license.css']
-        }
+        files: [
+          { expand: true, cwd: '.', src: ['app/css/**/*.css'], dest: 'build/' }
+        ]
       }
     },
 
@@ -60,6 +56,7 @@ module.exports = function (grunt) {
           { expand: true, cwd: '.', src: ['app/_locales/**'], dest: 'build/' }
         ]
       },
+
       wgt: {
         files: [
           { expand: true, cwd: 'build/app/', src: ['**'], dest: 'build/wgt/' },
@@ -91,6 +88,29 @@ module.exports = function (grunt) {
       {
         files: [
           { expand: true, cwd: 'data/chrome-crx/', src: ['manifest.json'], dest: 'build/crx/' }
+        ],
+
+        options:
+        {
+          processContent: function(content, srcpath)
+          {
+            return grunt.template.process(content);
+          }
+        }
+
+      },
+
+      xpk: {
+        files: [
+          { expand: true, cwd: 'build/app/', src: ['**'], dest: 'build/xpk/' },
+          { expand: true, cwd: '.', src: ['icon*.png'], dest: 'build/xpk/' }
+        ]
+      },
+
+      xpk_manifest:
+      {
+        files: [
+          { expand: true, cwd: 'data/tizen-xpk/', src: ['manifest.json'], dest: 'build/xpk/' }
         ],
 
         options:
@@ -182,7 +202,7 @@ module.exports = function (grunt) {
       install: {
         action: 'install',
         remoteFiles: {
-          pattern: '/home/developer/bubblewrap*.wgt',
+          pattern: '/home/developer/<%= packageInfo.name %>*.wgt',
           filter: 'latest'
         }
       },
@@ -221,7 +241,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('crx', ['dist', 'copy:crx', 'copy:crx_manifest']);
   grunt.registerTask('wgt', ['dist', 'copy:wgt', 'copy:wgt_config', 'package:wgt']);
+  grunt.registerTask('xpk', ['dist', 'copy:xpk', 'copy:xpk_manifest']);
   grunt.registerTask('sdk', [
+    'clean',
     'imagemin:dist',
     'copy:common',
     'copy:sdk',
