@@ -23,7 +23,7 @@
   font-family: 'Permanent Marker';
   font-style: normal;
   font-weight: normal;
-  src: local(Permanent Marker), local(PermanentMarker), url(../lib/permanentmarker/PermanentMarker.ttf);
+  src: local(Permanent Marker), local(PermanentMarker), url(../lib/permanentmarker/index.woff);
 }
 @font-face {
   font-family: 'Open Sans Semibold';
