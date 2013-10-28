@@ -7,7 +7,9 @@
     "components"
   ],
   "dependencies": {
-    "open-sans": "http://www.fontsquirrel.com/fonts/download/open-sans",
+    "open-sans-semibold": "http://themes.googleusercontent.com/static/fonts/opensans/v6/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff",
+    "open-sans-bold": "http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff",
+    "open-sans-extrabold": "http://themes.googleusercontent.com/static/fonts/opensans/v6/EInbV5DfGHOiMmvb1Xr-hnhCUOGz7vYGh680lGh-uXM.woff",
     "arvo": "http://www.fontsquirrel.com/fonts/download/arvo",
     "permanentmarker": "http://www.fontsquirrel.com/fonts/download/permanent-marker",
     "jquery": "~2.0.3"
