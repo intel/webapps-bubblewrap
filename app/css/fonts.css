@@ -29,7 +29,7 @@
   font-family: 'Open Sans Semibold';
   font-style: normal;
   font-weight: 600;
-  src: local(Open Sans Semibold), local(OpenSans-Semibold), url(../lib/opens-sans-semibold/index.woff);
+  src: local(Open Sans Semibold), local(OpenSans-Semibold), url(../lib/open-sans-semibold/index.woff);
 }
 @font-face {
   font-family: 'Open Sans Bold';
