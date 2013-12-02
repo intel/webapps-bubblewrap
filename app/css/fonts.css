@@ -11,7 +11,7 @@
   font-family: 'Arvo';
   font-style: normal;
   font-weight: bold;
-  src: local(Arvo Bold), local(Arvo-Bold), url(../lib/arvo/Arvo-Bold.ttf);
+  src: local(Arvo Bold), local(Arvo-Bold), url(../lib/arvo/index.woff);
 }
 @font-face {
   font-family: 'Open Sans Extrabold';
